@@ -97,6 +97,12 @@ while (restart == "ja")
             answer = "";
         }
     }
+
+if (point == 3)
+{
+    Console.WriteLine("Grattis, du fick full pott!");
+}
+
 Console.WriteLine("Vill du spela igen?");
 restart = Console.ReadLine();
 
