@@ -1,6 +1,8 @@
 ﻿int point = 0;
+int totscore = 0;
 string answer = "";
 string restart = "ja";
+
 
 Console.WriteLine("Välkommen till frågesporten :)");
 while (restart == "ja")
@@ -97,25 +99,35 @@ while (restart == "ja")
             answer = "";
         }
     }
-
+totscore = totscore+point;
 if (point == 3)
 {
     Console.WriteLine("Grattis, du fick full pott!");
 }
+    while (answer == "f")
+    {
+    Console.WriteLine("Vill du spela igen?");
+    restart = Console.ReadLine();
 
-Console.WriteLine("Vill du spela igen?");
-restart = Console.ReadLine();
+        if (restart == "ja")
+        {
+            Console.WriteLine("Okej, lycka till");
+            point = 0;
+            answer = "";
+        }
+        else if (restart == "nej")
+        {
+            Console.WriteLine($"Okej,du fick {totscore} poäng totalt!");
+            Console.WriteLine("Hejdå");
+            answer = "";
 
-if (restart == "ja")
-{
-    Console.WriteLine("Okej, lycka till");
-    point = 0;
-}
-else
-{
-    Console.WriteLine("Fett synd, du kanske skrev fel jag vet inte och bryr mig inte orkar inte skriva mer kod för fel inputs, ");
-    Console.WriteLine("Hejdå");
-}
+        }
+        else
+        {
+            Console.WriteLine("Fel input.");
+            
+        }
+    }
 }
 
 
